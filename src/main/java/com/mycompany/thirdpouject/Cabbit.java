@@ -24,12 +24,10 @@ public class Cabbit {
         this.health = 50;
     }
     public void feed() {
-        hunger += Food.hunger_value;
-        if (hunger > 100) hunger = 100;
+        hunger = clamp(mood + Food.hunger_value);
     }
     public void play() {
-        mood += 10;
-        if (mood > 100) mood = 100;
+        mood = clamp(mood + 10);
     }
     public void shower() {
         hygiene = 100;
@@ -39,4 +37,23 @@ public class Cabbit {
         health += 50;
         if (health > 100) health = 100;
     }
+    // decay functions in relation to the game's timer
+    public void decayHunger(int n)  {
+        hunger  = clamp(hunger  - n);
+    }
+    
+    public void decayMood(int n)    {
+        mood    = clamp(mood    - n);
+    }
+    public void decayHygiene(int n) {
+        hygiene = clamp(hygiene - n);
+    }
+    public void decayHealth(int n)  {
+        health  = clamp(health  - n);
+    }
+    
+    private int clamp(int v) {
+        return Math.max(0, Math.min(100, v));
+    }
+
 }

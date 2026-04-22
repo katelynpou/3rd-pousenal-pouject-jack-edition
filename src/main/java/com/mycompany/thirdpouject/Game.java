@@ -21,8 +21,8 @@ public class Game extends JPanel implements KeyListener, ActionListener {
         setBackground(Color.WHITE);
         setFocusable(true);   // required to receive KeyEvents
         addKeyListener(this);
-        
     }
+    
     @Override public void keyPressed(KeyEvent e) {}
     @Override public void keyReleased(KeyEvent e) {}
     @Override public void keyTyped(KeyEvent e) {}
