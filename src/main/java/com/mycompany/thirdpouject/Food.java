@@ -1,9 +1,11 @@
 package com.mycompany.thirdpouject;
 
 public class Food {
-    private int hunger_value;
+    public static int hunger_value;
+    public static String name;
 
-    public Food(int hunger_val) {
+    public Food(int hunger_val, String name) {
         this.hunger_value = hunger_val;
+        this.name = name;
     }
 }
