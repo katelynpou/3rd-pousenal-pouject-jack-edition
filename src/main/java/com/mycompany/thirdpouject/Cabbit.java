@@ -37,6 +37,30 @@ public class Cabbit {
         health += 50;
         if (health > 100) health = 100;
     }
+    
+    // getter functions
+        public String getName()  { 
+            return name;    
+        }
+        
+        public int getHunger()   { 
+            return hunger;  
+        }
+        
+        public int getMood()     { 
+            return mood;    
+        }
+        
+        public int getHygiene()  { 
+            return hygiene; 
+        }
+        
+        public int getHealth()   { 
+            return health;  
+        }
+
+    
+    
     // decay functions in relation to the game's timer
     public void decayHunger(int n)  {
         hunger  = clamp(hunger  - n);
